@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Manajemen Material Proyek</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        
+        <div class="login-card">
+            <div class="logo-section">
+                <div class="logo-icon">🏗️</div>
+                <h1>Material Manager</h1>
+                <p>Sistem Manajemen Material Proyek Bangunan</p>
+            </div>
+            
+            <div class="role-selection">
+                <h2>Pilih Peran Anda</h2>
+                <div class="role-buttons">
+                    <button class="role-btn admin-btn" onclick="login('admin')">
+                        <div class="role-content">
+                            <div class="role-icon">👨‍💼</div>
+                            <div class="role-info">
+                                <h3>Admin</h3>
+                                <p>Kelola kebutuhan awal material</p>
+                            </div>
+                        </div>
+                        <div class="role-arrow">→</div>
+                    </button>
+                    
+                    <button class="role-btn user-btn" onclick="login('user')">
+                        <div class="role-content">
+                            <div class="role-icon">👷‍♂️</div>
+                            <div class="role-info">
+                                <h3>Pengguna</h3>
+                                <p>Input penggunaan mingguan</p>
+                            </div>
+                        </div>
+                        <div class="role-arrow">→</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

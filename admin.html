@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Material Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>🏗️ Material Manager - Admin</h1>
+                    <p>Dashboard Manajemen Material</p>
+                </div>
+                <button class="logout-btn" onclick="logout()">
+                    <span>Keluar</span>
+                    <span class="logout-icon">🚪</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Quick Links Section -->
+            <div class="card links-card">
+                <div class="card-header">
+                    <h2>🔗 Pusat Informasi Proyek</h2>
+                </div>
+                <div class="links-grid">
+                    <a href="https://www.tokopedia.com/search?st=product&q=material%20bangunan" target="_blank" class="quick-link">
+                        <div class="link-icon">🏪</div>
+                        <div class="link-info">
+                            <h4>Supplier Material</h4>
+                            <p>Cari supplier material terpercaya</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.pu.go.id/" target="_blank" class="quick-link">
+                        <div class="link-icon">🏛️</div>
+                        <div class="link-info">
+                            <h4>Kementerian PUPR</h4>
+                            <p>Standar dan regulasi konstruksi</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.bmkg.go.id/" target="_blank" class="quick-link">
+                        <div class="link-icon">🌤️</div>
+                        <div class="link-info">
+                            <h4>Info Cuaca BMKG</h4>
+                            <p>Prakiraan cuaca untuk proyek</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://calculator.net/concrete-calculator.html" target="_blank" class="quick-link">
+                        <div class="link-icon">🧮</div>
+                        <div class="link-info">
+                            <h4>Kalkulator Material</h4>
+                            <p>Hitung kebutuhan material</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.konstruksi.com/" target="_blank" class="quick-link">
+                        <div class="link-icon">📰</div>
+                        <div class="link-info">
+                            <h4>Berita Konstruksi</h4>
+                            <p>Update industri konstruksi</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.monday.com/templates/construction-project-management" target="_blank" class="quick-link">
+                        <div class="link-icon">📊</div>
+                        <div class="link-info">
+                            <h4>Manajemen Proyek</h4>
+                            <p>Template manajemen proyek</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.osha.gov/construction" target="_blank" class="quick-link">
+                        <div class="link-icon">⚠️</div>
+                        <div class="link-info">
+                            <h4>Panduan K3</h4>
+                            <p>Keselamatan kerja konstruksi</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.coursera.org/courses?query=construction%20management" target="_blank" class="quick-link">
+                        <div class="link-icon">🎓</div>
+                        <div class="link-info">
+                            <h4>Pelatihan Online</h4>
+                            <p>Kursus manajemen konstruksi</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Media Gallery Section -->
+            <div class="card media-card">
+                <div class="card-header">
+                    <h2>📸 Galeri Media Proyek</h2>
+                <div class="media-gallery">
+                    <!-- Gambar 1 -->
+                    <div class="media-item">
+                        <img src="material-storage.jpg" alt="Material Storage" class="media-image">
+                        <div class="media-content">
+                            <h4>Penyimpanan Material</h4>
+                            <p>Contoh penyimpanan material yang baik dan terorganisir</p>
+                        </div>
+                    </div>
+
+                    <!-- Gambar 2 -->
+                    <div class="media-item">
+                        <img src="construction-site.jpg" alt="Construction Site" class="media-image">
+                        <div class="media-content">
+                            <h4>Site Konstruksi</h4>
+                            <p>Layout site konstruksi yang efisien</p>
+                        </div>
+                    </div>
+
+                    <!-- Video -->
+                    <div class="media-item">
+                        <video controls class="media-video" width="300">
+                            <source src="tutorial-material.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung pemutaran video.
+                        </video>
+                        <div class="media-content">
+                            <h4>Tutorial Manajemen Material</h4>
+                            <p>Video panduan pengelolaan material konstruksi</p>
+                        </div>
+                    </div>
+
+                    <!-- Gambar 3 -->
+                    <div class="media-item">
+                        <img src="quality-control.jpg" alt="Quality Control" class="media-image">
+                        <div class="media-content">
+                            <h4>Quality Control</h4>
+                            <p>Proses kontrol kualitas material</p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="card form-card">
+                <div class="card-header">
+                    <h2>➕ Input Kebutuhan Awal Material</h2>
+                </div>
+                <form id="materialForm" class="material-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="materialType">Jenis Material</label>
+                            <select id="materialType" required>
+                                <option value="">Pilih Jenis Material</option>
+                                <optgroup label="Material Dasar">
+                                    <option value="semen" data-unit="sak">Semen</option>
+                                    <option value="pasir" data-unit="m3">Pasir</option>
+                                    <option value="kerikil" data-unit="m3">Kerikil/Batu Split</option>
+                                    <option value="batu-bata" data-unit="pcs">Batu Bata</option>
+                                    <option value="batako" data-unit="pcs">Batako</option>
+                                    <option value="hebel" data-unit="pcs">Bata Hebel</option>
+                                </optgroup>
+                                <optgroup label="Besi & Logam">
+                                    <option value="besi-beton" data-unit="batang">Besi Beton</option>
+                                    <option value="besi-siku" data-unit="batang">Besi Siku</option>
+                                    <option value="kawat-bendrat" data-unit="kg">Kawat Bendrat</option>
+                                    <option value="paku" data-unit="kg">Paku</option>
+                                    <option value="seng" data-unit="lembar">Seng</option>
+                                </optgroup>
+                                <optgroup label="Kayu & Bambu">
+                                    <option value="kayu-balok" data-unit="batang">Kayu Balok</option>
+                                    <option value="kayu-papan" data-unit="lembar">Kayu Papan</option>
+                                    <option value="triplek" data-unit="lembar">Triplek</option>
+                                    <option value="bambu" data-unit="batang">Bambu</option>
+                                </optgroup>
+                                <optgroup label="Finishing">
+                                    <option value="cat" data-unit="kaleng">Cat</option>
+                                    <option value="keramik" data-unit="m2">Keramik</option>
+                                    <option value="genteng" data-unit="pcs">Genteng</option>
+                                    <option value="kaca" data-unit="m2">Kaca</option>
+                                    <option value="pintu" data-unit="pcs">Pintu</option>
+                                    <option value="jendela" data-unit="pcs">Jendela</option>
+                                </optgroup>
+                                <optgroup label="Instalasi">
+                                    <option value="pipa-pvc" data-unit="batang">Pipa PVC</option>
+                                    <option value="kabel-listrik" data-unit="meter">Kabel Listrik</option>
+                                    <option value="fitting-lampu" data-unit="pcs">Fitting Lampu</option>
+                                    <option value="stop-kontak" data-unit="pcs">Stop Kontak</option>
+                                    <option value="saklar" data-unit="pcs">Saklar</option>
+                                </optgroup>
+                                <optgroup label="Custom">
+                                    <option value="custom">Material Lainnya (Input Manual)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" id="customMaterialGroup" style="display: none;">
+                            <label for="customMaterialName">Nama Material Custom</label>
+                            <input type="text" id="customMaterialName" placeholder="Masukkan nama material">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="materialUnit">Satuan</label>
+                            <select id="materialUnit" required disabled>
+                                <option value="">Pilih material terlebih dahulu</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="materialQuantity">Jumlah Kebutuhan Awal</label>
+                            <input type="number" id="materialQuantity" required min="1" step="0.01" placeholder="0">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>Tambah Material</span>
+                        <span class="btn-icon">+</span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="card list-card">
+                <div class="card-header">
+                    <h2>📋 Daftar Material Proyek</h2>
+                </div>
+                <div id="materialList" class="material-list">
+                    <!-- Material list will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check if user is admin
+        if (localStorage.getItem('userRole') !== 'admin') {
+            window.location.href = 'index.html';
+        }
+        
+        // Load materials on page load
+        document.addEventListener('DOMContentLoaded', loadMaterials);
+    </script>
+</body>
+</html>
