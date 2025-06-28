@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User - Material Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>🏗️ Material Manager - Pengguna</h1>
+                    <p>Dashboard Penggunaan Material</p>
+                </div>
+                <button class="logout-btn" onclick="logout()">
+                    <span>Keluar</span>
+                    <span class="logout-icon">🚪</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-content">
+                        <h3>Total Material</h3>
+                        <div class="stat-number" id="totalMaterials">0</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📉</div>
+                    <div class="stat-content">
+                        <h3>Material Terpakai</h3>
+                        <div class="stat-number" id="usedMaterials">0</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-content">
+                        <h3>Material Tersisa</h3>
+                        <div class="stat-number" id="remainingMaterials">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="card links-card">
+                <div class="card-header">
+                    <h2>🔗 Pusat Informasi Pekerja</h2>
+                </div>
+                <div class="links-grid">
+                    <a href="https://www.youtube.com/results?search_query=tutorial+konstruksi+bangunan" target="_blank" class="quick-link">
+                        <div class="link-icon">📺</div>
+                        <div class="link-info">
+                            <h4>Tutorial Konstruksi</h4>
+                            <p>Video tutorial teknik konstruksi</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.bpjsketenagakerjaan.go.id/" target="_blank" class="quick-link">
+                        <div class="link-icon">🛡️</div>
+                        <div class="link-info">
+                            <h4>BPJS Ketenagakerjaan</h4>
+                            <p>Informasi jaminan pekerja</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.bmkg.go.id/" target="_blank" class="quick-link">
+                        <div class="link-icon">🌤️</div>
+                        <div class="link-info">
+                            <h4>Info Cuaca</h4>
+                            <p>Cek cuaca sebelum bekerja</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.alodokter.com/pertolongan-pertama" target="_blank" class="quick-link">
+                        <div class="link-icon">🏥</div>
+                        <div class="link-info">
+                            <h4>Pertolongan Pertama</h4>
+                            <p>Panduan P3K di lokasi kerja</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.tokopedia.com/search?st=product&q=alat%20safety%20konstruksi" target="_blank" class="quick-link">
+                        <div class="link-icon">🦺</div>
+                        <div class="link-info">
+                            <h4>Alat Safety</h4>
+                            <p>Perlengkapan keselamatan kerja</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.google.com/maps" target="_blank" class="quick-link">
+                        <div class="link-icon">🗺️</div>
+                        <div class="link-info">
+                            <h4>Peta Lokasi</h4>
+                            <p>Navigasi ke lokasi proyek</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.whatsapp.com/" target="_blank" class="quick-link">
+                        <div class="link-icon">💬</div>
+                        <div class="link-info">
+                            <h4>Komunikasi Tim</h4>
+                            <p>Koordinasi dengan tim proyek</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.skillacademy.com/search?q=konstruksi" target="_blank" class="quick-link">
+                        <div class="link-icon">📚</div>
+                        <div class="link-info">
+                            <h4>Skill Development</h4>
+                            <p>Pelatihan keahlian konstruksi</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Media Gallery Section -->
+            <div class="card media-card">
+                <div class="card-header">
+                    <h2>📸 Dokumentasi Kerja</h2>
+                </div>
+                <div class="media-gallery">
+                <div class="media-item">
+                    <img src="progress-harian.jpg" alt="Progress Harian" class="media-image">
+                    <div class="media-content">
+                        <h4>Progress Harian</h4>
+                        <p>Dokumentasi kemajuan pekerjaan harian</p>
+                    </div>
+                </div>
+                
+                <div class="media-item">
+                    <img src="alat-keselamatan.jpg" alt="Alat Keselamatan" class="media-image">
+                    <div class="media-content">
+                        <h4>Alat Keselamatan</h4>
+                        <p>Penggunaan APD yang benar</p>
+                    </div>
+                </div>
+                
+                <div class="media-item">
+                    <video controls class="media-video" width="300">
+                        <source src="safety-briefing.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung pemutaran video.
+                    </video>
+                    <div class="media-content">
+                        <h4>Safety Briefing</h4>
+                        <p>Video briefing keselamatan kerja</p>
+                    </div>
+                </div>
+                
+                <div class="media-item">
+                    <img src="kerja-tim.jpg" alt="Kerja Tim" class="media-image">
+                    <div class="media-content">
+                        <h4>Kerja Tim</h4>
+                        <p>Koordinasi tim di lapangan</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card form-card">
+                <div class="card-header">
+                    <h2>📝 Input Kebutuhan Mingguan</h2>
+                </div>
+                <form id="weeklyUsageForm" class="material-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="selectedMaterial">Pilih Material</label>
+                            <select id="selectedMaterial" required>
+                                <option value="">Pilih Material</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="usageQuantity">Jumlah Penggunaan</label>
+                            <input type="number" id="usageQuantity" required min="0.01" step="0.01" placeholder="0">
+                            <small id="availableStock" class="stock-info"></small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="usageWeek">Minggu ke</label>
+                            <input type="number" id="usageWeek" required min="1" placeholder="1">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="usageNotes">Catatan (opsional)</label>
+                        <textarea id="usageNotes" placeholder="Catatan penggunaan material..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>Catat Penggunaan</span>
+                        <span class="btn-icon">✓</span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="card table-card">
+                <div class="card-header">
+                    <h2>📊 Riwayat Penggunaan Material</h2>
+                </div>
+                <div class="table-container">
+                    <table id="usageHistoryTable">
+                        <thead>
+                            <tr>
+                                <th>Tanggal</th>
+                                <th>Material</th>
+                                <th>Jumlah</th>
+                                <th>Minggu ke</th>
+                                <th>Catatan</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usageHistoryBody">
+                            <!-- Usage history will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check if user is user
+        if (localStorage.getItem('userRole') !== 'user') {
+            window.location.href = 'index.html';
+        }
+        
+        // Load data on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMaterialsForUser();
+            loadUsageHistory();
+            updateStats();
+        });
+    </script>
+</body>
+</html>
